@@ -35,9 +35,6 @@ class Form extends React.Component {
   }
   render() {
     const { formErrors } = this.state;
-    if (this.props.isShow) {
-      return null;
-    }
     return (
       <div className="card-body">
         <h2 className="title">Registration Info</h2>
@@ -58,7 +55,6 @@ class Form extends React.Component {
             <div className="col-2">
               <div className={(formErrors.dob.length > 0) ? "input-border" : "input-group"}>
                 <input className="input--style-2 js-datepicker" onBlur={this.handleChange} onChange={this.handleChange} value={this.state.dob} type="date" placeholder="Birthdate" name="dob" />
-                {/* <i className="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i> */}
               </div>
               {formErrors.dob.length > 0 && (<span className="errorMessage">{formErrors.dob}</span>)}
             </div>
